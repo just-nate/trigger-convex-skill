@@ -28,8 +28,6 @@ npx skills add https://github.com/just-nate/trigger-convex-skill/tree/main/skill
 
 ## Install with `skills.sh`
 
-This repo also includes a small installer script for people who want a direct shell setup.
-
 ```bash
 curl -fsSL https://raw.githubusercontent.com/just-nate/trigger-convex-skill/main/skills.sh | bash
 ```
@@ -59,6 +57,17 @@ The installed result should look like:
 ```text
 <your-skills-dir>/trigger-convex/SKILL.md
 ```
+
+## What's included
+
+```text
+skills/trigger-convex/
+├── SKILL.md
+└── references/
+    └── implementation-notes.md
+```
+
+`SKILL.md` is the main instruction file. `implementation-notes.md` has short copyable snippets for setup, Convex callbacks, idempotent mutations, Trigger.dev tasks, and troubleshooting.
 
 ## What the skill covers
 
