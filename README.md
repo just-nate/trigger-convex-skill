@@ -1,18 +1,15 @@
 # Trigger.dev + Convex Skill
 
-A reusable agent skill for building production-grade **Trigger.dev v4 + Convex** integrations.
+A clean, reusable agent skill for building **Trigger.dev v4 + Convex** integrations.
 
-Use it when you need:
+Use it for:
 
 - durable background jobs
 - Convex realtime state
 - secure Trigger.dev → Convex HTTP callbacks
-- queues and concurrency limits
-- retries and idempotency
-- progress/activity tracking
-- worker-to-database synchronization
-
-ELI5: Trigger.dev does the slow background work. Convex stores the live state. This skill teaches agents how to connect them safely.
+- queues and retries
+- idempotent worker updates
+- progress/activity timelines
 
 ## Install with the Skills CLI
 
@@ -32,60 +29,30 @@ npx skills add https://github.com/just-nate/trigger-convex-skill/tree/main/skill
 curl -fsSL https://raw.githubusercontent.com/just-nate/trigger-convex-skill/main/skills.sh | bash
 ```
 
-By default, it installs to:
-
-```text
-~/.agents/skills/trigger-convex
-```
-
-To install somewhere else:
+Custom skills directory:
 
 ```bash
 SKILLS_DIR="$HOME/.claude/skills" bash skills.sh
 ```
 
-## Manual install
-
-Copy this folder into your agent skills directory:
+Default install path:
 
 ```text
-skills/trigger-convex
+~/.agents/skills/trigger-convex
 ```
 
-The installed result should look like:
+## Repo structure
 
 ```text
-<your-skills-dir>/trigger-convex/SKILL.md
+skills/trigger-convex/SKILL.md
+skills.sh
+README.md
+LICENSE
 ```
-
-## What's included
-
-```text
-skills/trigger-convex/
-├── SKILL.md
-└── references/
-    └── implementation-notes.md
-```
-
-`SKILL.md` is the main instruction file. `implementation-notes.md` has short copyable snippets for setup, Convex callbacks, idempotent mutations, Trigger.dev tasks, and troubleshooting.
-
-## What the skill covers
-
-- Trigger.dev setup and `trigger.config.ts`
-- Trigger.dev task patterns
-- parent/child task orchestration
-- `batchTriggerAndWait()` safety rules
-- queues and concurrency
-- retries and `AbortTaskRunError`
-- secure Convex HTTP actions
-- Convex validators, schema, and indexes
-- idempotent internal mutations
-- realtime UI query patterns
-- verification checklist
 
 ## Scope
 
-This skill is intentionally generic. It does **not** assume a specific product, AI provider, storage provider, auth provider, framework, or deployment platform.
+This skill is generic. It does not assume a specific app, framework, AI provider, storage provider, auth provider, billing system, or deployment platform.
 
 ## License
 
